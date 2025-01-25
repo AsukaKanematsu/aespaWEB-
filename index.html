@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>K-Pop Idol Group Website</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/album-gallery.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/calendar.css">
+    </head>
+<body>
+    <header>
+        <!-- YouTubeの埋め込み動画 -->
+        <div class="video-wrapper">
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/lOvoCIks3kU?autoplay=1&mute=1&loop=1&playlist=lOvoCIks3kU&controls=0&showinfo=0&rel=0&cc_load_policy=0&iv_load_policy=3&hl=en"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- ヘッダーテキストとナビゲーション -->
+        <div class="header-content">
+            <h1>aespa</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <section id="home">
+            <div class="home-content">
+                <div class="home-text">
+                    <h2>Welcome to My World</h2>
+                    <p>aespaは韓国の4人組ガールズグループで、リアルとバーチャルの融合をテーマにした新時代のアーティストです。<br>
+                    2020年11月にデビューし、ヒット曲「Next Level」「Savage」などで世界中のファンを魅了しています。</p>
+                </div>
+                <img src="images/aespa-12-1.jpg" alt="aespa Group Photo" class="home-image">
+            </div>
+        </section>
+
+        <section id="profile">
+            <div class="profile-header">
+                <h2>Profile</h2>
+                <p>Meet the members of the group.</p>
+            </div>
+            <div class="gallery">
+                <div class="hover-effect" data-member="KARINA">
+                    <img src="images/karina1.jpeg" alt="Karina">
+                </div>
+                <div class="hover-effect" data-member="GISELLE">
+                    <img src="images/giselle1.jpeg" alt="Giselle">
+                </div>
+                <div class="hover-effect" data-member="WINTER">
+                    <img src="images/winter1.jpeg" alt="Winter">
+                </div>
+                <div class="hover-effect" data-member="NINGNING">
+                    <img src="images/ningning1.jpeg" alt="Ningning">
+                </div>
+            </div>
+        </section>
+
+        <!-- アルバムギャラリーセクション -->
+        <section id="albums">
+            <div class="albums-header">
+                <h2>Discography</h2>
+                <p>Our musical journey through time.</p>
+            </div>
+            <div class="album-gallery">
+                <div class="album-container"></div>
+            </div>
+        </section>
+
+        <!-- カレンダーセクション -->
+        <section id="schedule">
+            <div class="schedule-header">
+                <h2>Schedule</h2>
+                <p>Upcoming events and activities.</p>
+            </div>
+            <div class="calendar-wrapper">
+                <div class="calendar-nav">
+                    <button id="prevMonth">&lt;</button>
+                    <h3 id="currentMonth">January 2024</h3>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar">
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div id="calendar-days" class="days">
+                        <!-- 日付はJavaScriptで動的に生成 -->
+                    </div>
+                </div>
+                <div id="event-list" class="events">
+                    <!-- イベント一覧 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 aespa Fan Page. All rights reserved.</p>
+            <p>Follow us on:</p>
+            <div class="social-icons">
+                <a href="#"><img src="images/IMG_0436.png" alt="Twitter"></a>
+                <a href="#"><img src="images/IMG_0440.png" alt="Instagram"></a>
+                <a href="#"><img src="images/IMG_0438.png" alt="YouTube"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- スクリプト -->
+    <script src="js/RotatingAlbumGallery.js"></script>
+    <script src="js/calendar.js"></script>
+</body>
+</html>
