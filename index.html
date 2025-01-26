@@ -115,6 +115,40 @@
                     <!-- イベント一覧 -->
                 </div>
             </div>
+
+            <section id="contact">
+                <div class="contact-header">
+                    <h2>Contact</h2>
+                    <p>Get in touch with us.</p>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="fan">Fan Message</option>
+                                <option value="support">Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </section>
         </section>
     </main>
 
@@ -134,5 +168,7 @@
     <!-- スクリプト -->
     <script src="js/RotatingAlbumGallery.js"></script>
     <script src="js/calendar.js"></script>
+    <!-- bodyの終了タグの直前に追加 -->
+    <script src="js/contact.js"></script>
 </body>
 </html>

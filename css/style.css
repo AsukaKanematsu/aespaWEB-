@@ -138,8 +138,7 @@ footer {
     background-color: #333;
     color: #fff;
     padding: 40px 0;
-    text-align: center;
-    margin-top: 40px;
+    margin-top: 0; /* 変更 */
 }
 
 .footer-content p {
@@ -270,3 +269,113 @@ footer {
     color: #cccccc;
 }
 
+#contact {
+    background-color: #000;
+    padding: 4rem 0;
+    color: white;
+    margin: 0; /* 追加 */
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: #000; /* 追加 */
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.contact-header p {
+    color: #cccccc;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #1a1a1a; /* 濃い灰色の背景 */
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #800080;  /* 紫色 */
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.submit-btn {
+    background-color: #800080;  /* 紫色 */
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #9a009a;  /* より明るい紫色 */
+    transform: translateY(-2px);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 0 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+}
+
+section {
+    margin: 0;
+    padding: 4rem 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}

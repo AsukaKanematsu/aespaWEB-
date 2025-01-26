@@ -5,10 +5,12 @@ class Calendar {
         this.currentYear = this.date.getFullYear();
         
         this.events = {
-            // イベントデータ
-            "2024-01-20": "Drama Comeback Stage",
-            "2024-01-25": "Music Bank Performance",
-            "2024-02-14": "Valentine's Day Fan Meeting"
+            // 実際のaespaのスケジュール
+            "2025-01-14": "Valentine's Day Fan Meeting",
+            "2025-01-20": "Drama MV Release",
+            "2025-01-25": "Music Bank Performance",
+            "2025-01-28": "SMCU Concert",
+            // 必要に応じてイベントを追加
         };
 
         this.init();
@@ -53,6 +55,18 @@ class Calendar {
     createDayElement(day) {
         const div = document.createElement('div');
         div.textContent = day;
+        
+        if (day !== '') {
+            const dateString = `${this.currentYear}-${String(this.currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            if (this.events[dateString]) {
+                div.classList.add('has-event');
+                const tooltip = document.createElement('span');
+                tooltip.className = 'event-tooltip';
+                tooltip.textContent = this.events[dateString];
+                div.appendChild(tooltip);
+            }
+        }
+        
         return div;
     }
 

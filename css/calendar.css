@@ -87,3 +87,40 @@
     background: #fe0303;
     border-radius: 50%;
 }
+
+.has-event {
+    background-color: rgba(128, 0, 128, 0.2);  /* 紫色の半透明 */
+    border: 1px solid #800080;  /* 紫色のボーダー */
+    position: relative;
+}
+
+.event-tooltip {
+    display: none;
+    position: absolute;
+    background: rgba(128, 0, 128, 0.8);  /* 紫色の濃い半透明背景 */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    z-index: 1000;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.days .has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background: #800080;  /* ドットも紫色に */
+    border-radius: 50%;
+}
+
+.has-event:hover .event-tooltip {
+    display: block;
+}
