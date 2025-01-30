@@ -379,3 +379,58 @@ main {
     padding: 0;
     background-color: #000;
 }
+
+/* ヘッダーナビゲーション fixed */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #fe0303;
+}
+
+/* ヒーローセクション（動画とロゴ） */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 4rem;
+    margin: 0;
+    font-weight: bold;
+}

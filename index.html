@@ -10,35 +10,37 @@
         <link rel="stylesheet" href="css/calendar.css">
     </head>
 <body>
-    <header>
-        <!-- YouTubeの埋め込み動画 -->
-        <div class="video-wrapper">
-            <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/lOvoCIks3kU?autoplay=1&mute=1&loop=1&playlist=lOvoCIks3kU&controls=0&showinfo=0&rel=0&cc_load_policy=0&iv_load_policy=3&hl=en"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
-        </div>
+    <!-- ヘッダーナビゲーション（固定） -->
+<header class="main-header">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <!-- ヘッダーテキストとナビゲーション -->
-        <div class="header-content">
-            <h1>aespa</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#profile">Profile</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!-- ヒーローセクション（動画とロゴ） -->
+<section class="hero-section">
+    <div class="video-wrapper">
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/lOvoCIks3kU?autoplay=1&mute=1&loop=1&playlist=lOvoCIks3kU&controls=0&showinfo=0&rel=0&cc_load_policy=0&iv_load_policy=3&hl=en"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class="hero-content">
+        <h1>aespa</h1>
+    </div>
+</section>
 
     <!-- メインコンテンツ -->
     <main>
