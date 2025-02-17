@@ -5,7 +5,63 @@
     box-sizing: border-box;
 }
 
-/* YouTube動画のスタイル */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+main {
+    background-color: #000;
+}
+
+/* ヘッダーナビゲーション */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.main-nav a:hover {
+    color: #fe0303;
+}
+
+/* ヒーローセクション */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
 .video-wrapper {
     position: absolute;
     top: 0;
@@ -20,59 +76,28 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 177.78vh; /* 16:9の比率を保つ */
+    width: 177.78vh;
     height: 100vh;
     transform: translate(-50%, -50%);
-    pointer-events: none; /* クリックできないようにする */
+    pointer-events: none;
 }
 
-/* ヘッダーのスタイル */
-header {
+.hero-content {
     position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
     text-align: center;
-    overflow: hidden;
+    z-index: 2;
 }
 
-/* ヘッダーコンテンツ */
-.header-content {
-    position: relative;
-    z-index: 1;
-}
-
-h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 1em;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #fe0303;
-}
-
-#home {
-    padding: 0;
+.hero-content h1 {
+    color: white;
+    font-size: 4rem;
     margin: 0;
+    font-weight: bold;
+}
+
+/* ホームセクション */
+#home {
+    padding-top: 60px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -93,25 +118,27 @@ nav ul li a:hover {
 .home-text {
     position: absolute;
     z-index: 1;
-    left: 10%;  /* 左からの位置を調整 */
-    top: 50%;  /* 上からの位置を調整 */
-    transform: translateY(-50%);
+    left: 5%;  /* 左端からの位置を調整 */
+    bottom: 15%;  /* 下端からの位置を調整 */
+    transform: none;  /* 上下中央配置を解除 */
     color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     padding: 20px;
-    animation: fadeInLeft 1s ease-out;
+    max-width: 800px;
 }
 
 #home h2 {
-    font-size: 4.5rem;
-    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 700;
     margin-bottom: 30px;
-    font-family: 'Montserrat', serif;
-    background: white;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    white-space: nowrap;  /* テキストを1行に強制 */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        -2px -2px 4px rgba(255, 255, 255, 0.1);
 }
 
 #home p {
@@ -120,10 +147,22 @@ nav ul li a:hover {
     max-width: 600px;
     color: rgba(255, 255, 255, 0.9);
     font-family: 'Noto Sans JP', sans-serif;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);  /* 背景を少し濃く */
+    padding: 25px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);  /* 背景のブラー効果 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .home-text {
+        left: 5%;
+        bottom: 10%;
+    }
+
+    #home h2 {
+        font-size: 3.5rem;
+    }
 }
 
 .home-image {
@@ -134,38 +173,7 @@ nav ul li a:hover {
     padding: 0;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 40px 0;
-    margin-top: 0; /* 変更 */
-}
-
-.footer-content p {
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-.social-icons {
-    margin-top: 20px;
-}
-
-.social-icons a {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-.social-icons img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-}
-
-.social-icons a:hover img {
-    transform: scale(1.2);
-}
-
-/* Profile section with gallery */
+/* プロフィールセクション */
 #profile {
     background-color: black;
     color: white;
@@ -173,10 +181,10 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0;
+    padding-top: 60px;
 }
 
-#profile .profile-header {
+.profile-header {
     text-align: center;
     padding: 40px 20px;
 }
@@ -193,7 +201,7 @@ footer {
     color: #cccccc;
 }
 
-/* Gallery section */
+/* ギャラリーセクション */
 .gallery {
     display: flex;
     justify-content: space-between;
@@ -246,41 +254,20 @@ footer {
     z-index: 1;
 }
 
-/* アルバムギャラリーセクション */
-#albums {
-    background-color: black;
-    padding: 4rem 0;
-    min-height: 100vh;
-}
-
-.albums-header {
-    text-align: center;
-    color: white;
-    margin-bottom: 3rem;
-}
-
-.albums-header h2 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
-
-.albums-header p {
-    font-size: 1.2em;
-    color: #cccccc;
-}
-
+/* コンタクトセクション */
 #contact {
     background-color: #000;
     padding: 4rem 0;
     color: white;
-    margin: 0; /* 追加 */
+    margin: 0;
+    padding-top: 60px;
 }
 
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
     padding: 0 20px;
-    background-color: #000; /* 追加 */
+    background-color: #000;
 }
 
 .contact-header {
@@ -295,12 +282,6 @@ footer {
 
 .contact-header p {
     color: #cccccc;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .form-group {
@@ -320,7 +301,7 @@ footer {
     padding: 0.8rem;
     border: 1px solid #333;
     border-radius: 4px;
-    background-color: #1a1a1a; /* 濃い灰色の背景 */
+    background-color: #1a1a1a;
     color: white;
     transition: all 0.3s ease;
 }
@@ -329,12 +310,12 @@ footer {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #800080;  /* 紫色 */
+    border-color: #800080;
     background-color: rgba(255, 255, 255, 0.15);
 }
 
 .submit-btn {
-    background-color: #800080;  /* 紫色 */
+    background-color: #800080;
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -346,12 +327,69 @@ footer {
 }
 
 .submit-btn:hover {
-    background-color: #9a009a;  /* より明るい紫色 */
+    background-color: #9a009a;
     transform: translateY(-2px);
+}
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 0;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
 }
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
+    .main-nav ul {
+        gap: 2rem;
+    }
+
+    .main-nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-text {
+        left: 5%;
+    }
+
+    #home h2 {
+        font-size: 3rem;
+    }
+
     .contact-form {
         padding: 0 15px;
     }
@@ -363,74 +401,244 @@ footer {
     }
 }
 
+/* 全体の共通スタイル */
 section {
     margin: 0;
     padding: 4rem 0;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-}
-
-main {
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-}
-
-/* ヘッダーナビゲーション fixed */
-.main-header {
+/* モーダル用のCSS */
+.modal {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 1rem 0;
-    z-index: 1000;
-}
-
-.main-nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 2rem;
-}
-
-.main-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-    color: #fe0303;
-}
-
-/* ヒーローセクション（動画とロゴ） */
-.hero-section {
-    position: relative;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    overflow-y: scroll; /* autoからscrollに変更 */
 }
 
-.hero-content {
+.modal.active {
+    display: block;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #000;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* 画像コンテナ */
+.modal-image {
+    width: 100%;
+    height: 40vh; /* ビューポートの40%の高さ */
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 情報コンテナ */
+.modal-info {
+    padding: 20px;
+    background: #000;
+}
+
+.modal-info h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.modal-close {
     position: absolute;
-    text-align: center;
-    z-index: 2;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    transition: transform 0.3s ease;
 }
 
-.hero-content h1 {
-    color: white;
-    font-size: 4rem;
-    margin: 0;
-    font-weight: bold;
+.modal-close:hover {
+    transform: scale(1.1);
+}
+
+/* ホバーエフェクトの基本設定 */
+.hover-effect {
+    cursor: pointer;
+}
+/* レスポンシブ対応の統合 */
+@media (max-width: 1200px) {
+    .gallery {
+        padding: 0 15px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+ }
+ 
+ @media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+ }
+ 
+ @media (max-width: 992px) {
+    .hover-effect {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+ }
+ 
+
+/* モバイルでのスクロール対応を追加 */
+@media (max-width: 576px) {
+    .modal-content {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        min-height: auto; /* 100vhから変更 */
+        padding-bottom: 60px; /* 下部に余白を追加 */
+    }
+
+    .modal-image {
+        height: 200px;
+    }
+
+    .modal-info {
+        padding: 15px;
+    }
+ 
+    .modal-name, 
+    .modal-info h3,
+    .member-name {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+ 
+    /* ギャラリー関連 */
+    .hover-effect {
+        width: 48%;
+        margin-bottom: 15px;
+    }
+ }
+ 
+ @media (max-width: 576px) {
+    /* ギャラリー関連 */
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+ 
+    .gallery-item .name {
+        font-size: 1rem;
+    }
+ 
+    .hover-effect {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+ 
+    /* モーダル関連 */
+    .modal-content {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+ 
+    .modal-image,
+    .member-image {
+        height: 200px;
+    }
+ 
+    .modal-info,
+    .member-info {
+        padding: 15px;
+    }
+ 
+    .modal-name,
+    .modal-info h3,
+    .modal-header h2,
+    .member-name {
+        font-size: 2.5rem;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    
+    /* 情報項目 */
+    .info-item {
+        margin: 15px 0;
+        padding: 10px 0;
+    }
+    
+    .info-label {
+        color: #888;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .info-value {
+        color: #fff;
+        font-size: 1.1rem;
+    }
+ }
+ 
+ /* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .modal-image {
+        height: 35vh;
+    }
+
+    .member-name {
+        font-size: 2rem;
+    }
+}
+
+/* モバイルでのスクロール対応を追加 */
+@media (max-width: 576px) {
+    .modal-content {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        min-height: auto; /* 100vhから変更 */
+        padding-bottom: 60px; /* 下部に余白を追加 */
+    }
+
+    .modal-image {
+        height: 200px;
+    }
+
+    .modal-info {
+        padding: 15px;
+    }
 }
