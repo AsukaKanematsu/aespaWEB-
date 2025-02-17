@@ -10,37 +10,36 @@
         <link rel="stylesheet" href="css/calendar.css">
     </head>
 <body>
-    <!-- ヘッダーナビゲーション（固定） -->
-<header class="main-header">
-    <nav class="main-nav">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#schedule">Schedule</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- ヒーローセクション（動画とロゴ） -->
-<section class="hero-section">
-    <div class="video-wrapper">
-        <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/lOvoCIks3kU?autoplay=1&mute=1&loop=1&playlist=lOvoCIks3kU&controls=0&showinfo=0&rel=0&cc_load_policy=0&iv_load_policy=3&hl=en"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-        </iframe>
-    </div>
-    <div class="hero-content">
-        <h1>aespa</h1>
-    </div>
-</section>
+    <!-- ヒーローセクション -->
+    <section class="hero-section">
+        <div class="video-wrapper">
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/lOvoCIks3kU?autoplay=1&mute=1&loop=1&playlist=lOvoCIks3kU&controls=0&showinfo=0&rel=0&cc_load_policy=0&iv_load_policy=3&hl=en"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="hero-content">
+            <h1>aespa</h1>
+        </div>
+    </section>
 
     <!-- メインコンテンツ -->
     <main>
@@ -60,6 +59,7 @@
                 <h2>Profile</h2>
                 <p>Meet the members of the group.</p>
             </div>
+
             <div class="gallery">
                 <div class="hover-effect" data-member="KARINA">
                     <img src="images/karina1.jpeg" alt="Karina">
@@ -74,18 +74,42 @@
                     <img src="images/ningning1.jpeg" alt="Ningning">
                 </div>
             </div>
+
+            <!-- プロフィールモーダル -->
+            <div class="modal" id="profileModal">
+                <div class="modal-content">
+                    <div class="modal-image">
+                        <img src="" alt="" id="modalImage">
+                    </div>
+                    <div class="modal-info">
+                        <h3 id="modalName"></h3>
+                        <p id="modalDescription"></p>
+                        <div id="modalDetails"></div>
+                    </div>
+                    <button class="modal-close">&times;</button>
+                </div>
+            </div>
         </section>
 
         <!-- アルバムギャラリーセクション -->
-        <section id="albums">
-            <div class="albums-header">
-                <h2>Discography</h2>
-                <p>Our musical journey through time.</p>
-            </div>
-            <div class="album-gallery">
-                <div class="album-container"></div>
-            </div>
-        </section>
+<!-- アルバムギャラリーセクション -->
+<section id="albums">
+    <div class="albums-header">
+        <h2>Discography</h2>
+        <p>Our musical journey through time.</p>
+    </div>
+    <div class="album-gallery-wrapper">
+        <button class="album-nav-btn prev-btn">
+            <span class="arrow-left">&#8592;</span>
+        </button>
+        <div class="album-gallery">
+            <div class="album-container"></div>
+        </div>
+        <button class="album-nav-btn next-btn">
+            <span class="arrow-right">&#8594;</span>
+        </button>
+    </div>
+</section>
 
         <!-- カレンダーセクション -->
         <section id="schedule">
@@ -157,7 +181,7 @@
     <!-- フッター -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 aespa Fan Page. All rights reserved.</p>
+            <p>&copy; 2024 aespa Fan Page.</p>
             <p>Follow us on:</p>
             <div class="social-icons">
                 <a href="#"><img src="images/IMG_0436.png" alt="Twitter"></a>
@@ -168,9 +192,24 @@
     </footer>
 
     <!-- スクリプト -->
-    <script src="js/RotatingAlbumGallery.js"></script>
-    <script src="js/calendar.js"></script>
-    <!-- bodyの終了タグの直前に追加 -->
-    <script src="js/contact.js"></script>
+
+<!-- YouTubeのiframe APIを確実に読み込む -->
+<script>
+    // YouTube IFrame API の非同期読み込み
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+    // APIの準備完了時に呼ばれる関数
+    function onYouTubeIframeAPIReady() {
+        console.log('YouTube API is ready');
+    }
+</script>
+<!-- スクリプト -->
+<script src="js/RotatingAlbumGallery.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/modal.js"></script>
 </body>
 </html>
