@@ -22,7 +22,7 @@ const images = [
         title: 'Savage', 
         year: '2021', 
         image: 'images/savage-cover.jpg',
-        embedCode: `<iframe width="560" height="315" src="https://youtu.be/REmUidcJt5I?si=pfLaMx7rBMcB6ji7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+        embedCode: `<iframe width="560" height="315" src="https://youtu.be/8_4Debx0YlQ?si=A31FjkWWnNFVDpyO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
     },
     { 
         id: 4, 
@@ -50,7 +50,7 @@ const images = [
         title: 'Drama', 
         year: '2024', 
         image: 'images/drama-cover.jpg',
-        embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/S3Z6N7U7f6I?si=Xnu-KucfUBZ_sdCv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+        embedCode: `<iframe width="560" height="315" src="https://youtu.be/S3Z6N7U7f6I?si=iQW4g6D5SPQnPImF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
     },
     { 
         id: 8, 

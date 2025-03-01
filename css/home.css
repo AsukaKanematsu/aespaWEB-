@@ -1,0 +1,91 @@
+/* ホームセクション */
+#home {
+    padding-top: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* home-content の修正 */
+.home-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* space-between から center に変更 */
+    position: relative;
+}
+
+.home-text {
+    position: absolute;
+    z-index: 1;
+    transform: none;  /* 上下中央配置を解除 */
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#home h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    white-space: nowrap;  /* テキストを1行に強制 */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        -2px -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+#home p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Noto Sans JP', sans-serif;
+    background: rgba(0, 0, 0, 0.7);  /* 背景を少し濃く */
+    padding: 25px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);  /* 背景のブラー効果 */
+}
+
+
+.home-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+  
+    .home-img {
+        width: 100%;  /* タブレット表示で画像幅を100%に調整 */
+        height: auto;
+    }
+  
+    .home-text {
+        bottom: auto;
+        left: auto;
+        position: relative;
+        margin-top: 20px; /* 必要に応じて調整 */
+    }
+    #home h2 {
+        margin-bottom: 10px;  /* タブレット表示でもh1とpの間隔を設定 */
+      }
+
+    #home p {
+        margin-top: 0;  /* pの上マージンをリセット */
+      }
+  }
