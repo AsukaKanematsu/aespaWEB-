@@ -1,3 +1,10 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
 /* リセット */
 * {
     margin: 0;
@@ -52,29 +59,6 @@ main {
 
 .main-nav a:hover {
     color: #fe0303;
-}
-
-/* ヒーローセクション */
-.hero-section {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 60px;
-}
-
-.hero-content {
-    position: relative;
-    text-align: center;
-    z-index: 2;
-}
-
-.hero-content h1 {
-    color: white;
-    font-size: 4rem;
-    margin: 0;
-    font-weight: bold;
 }
 
 /* フッター */
@@ -328,7 +312,6 @@ section {
     .container, .wrapper, main, section {
         width: 100%;
         margin: 0;
-        padding: 0 15px; /* 必要に応じて内側の余白を調整 */
     }
 
     .modal-content {
